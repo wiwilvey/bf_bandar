@@ -10,4 +10,12 @@ $(document).ready( function(){
     $("#menuSpend").click( function(){
         window.location='dataPengeluaran.html';
     })
+
+    $.getJSON ( server + `rekapBiaya.php` , function (rekap){
+        $(".saldo").html('');
+        $("#saldoSPP").html( parseInt(rekap.spp).toLocaleString('id-ID') );
+        $("#saldoDU").html( parseInt(rekap.du).toLocaleString('id-ID') );
+        $("#saldoKeluar").html( parseInt(rekap.keluar).toLocaleString('id-ID') );
+        $("#saldoAkhir").html( parseInt(rekap.sisa).toLocaleString('id-ID') );
+    })
 })

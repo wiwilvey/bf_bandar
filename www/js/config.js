@@ -1,0 +1,1 @@
+var server = "http://localhost/project_kp2/webservices/";
