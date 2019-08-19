@@ -36,8 +36,15 @@ function getRekamanPengeluaran(){
             <p>${data.KODE_BAYAR} - ${data.KET_POST}<p>
             <p>Tanggal: ${data.TANGGAL}. Rp ${parseInt(data.JUMLAH).toLocaleString('id-ID')},00</p>
             <p>${data.BERITA} - ${data.PENERIMA}</p>
+            <p><a href='javascript:void(0)' onClick=cetak('${data.KODE_BAYAR}','bayar')>cetak</a></P>
             </li>
             `)
         })
     })
+}
+
+function cetak(kode,biaya){
+    localStorage.setItem('kode',kode);
+    localStorage.setItem('biaya',biaya);
+    window.location='notaCetak.html';
 }

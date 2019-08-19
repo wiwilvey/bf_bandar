@@ -28,11 +28,17 @@ function getRekamanSPP(){
         $.each(spp , function(i,data){
             $("#rekordSPP").append(`
             <li class='list-group-item'>
-            <p>${data.KODE_TERIMA}</p>
+            <p>${data.KODE_TERIMA} - <a href='javascript:void(0)' onClick=cetak('${data.KODE_TERIMA}','SPP')>cetak</a></p>
             <p>${data.NAMA} - ${data.KELAS} [${data.NIS}]</p>
             <p> Rp ${parseInt(data.JUMLAH).toLocaleString('id-ID')},00 ${data.BERITA}</p>
             </li>
             `)
         })
     })
+}
+
+function cetak(kode,biaya){
+    localStorage.setItem('kode',kode);
+    localStorage.setItem('biaya',biaya);
+    window.location='notaCetak.html';
 }

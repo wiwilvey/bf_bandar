@@ -24,11 +24,17 @@ function getRekamanDU(){
         $.each(du , function(i,data){
             $("#rekordDU").append(`
             <li class='list-group-item'>
-            <p>${data.KODE_TERIMA}</p>
+            <p>${data.KODE_TERIMA} - <a href='javascript:void(0)' onClick=cetak('${data.KODE_TERIMA}','DU')>cetak</a></p>
             <p>${data.NAMA} - ${data.KELAS} [${data.NIS}]</p>
             <p> Rp ${parseInt(data.JUMLAH).toLocaleString('id-ID')},00 ${data.BERITA}</p>
             </li>
             `)
         })
     })
+}
+
+function cetak(kode,biaya){
+    localStorage.setItem('kode',kode);
+    localStorage.setItem('biaya',biaya);
+    window.location='notaCetak.html';
 }
