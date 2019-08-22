@@ -1,4 +1,8 @@
 $(document).ready( function(){
+    var authcode = localStorage.getItem('loginData');
+    if( authcode == null || authcode == ""){
+        window.location="login.html";
+    }
     $("#menuSPP").click( function(){
         window.location='dataSpp.html';
     })

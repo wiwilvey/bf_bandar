@@ -43,3 +43,10 @@ div.row.kepala > div > h3{
     background-color:#1e1eff; color: #ffff74;
     padding: 10px;
 }
+
+.login-image-trap {
+    width: 60px; margin:auto;
+}
+.login-image-trap > img {
+    width: 100%;
+}
